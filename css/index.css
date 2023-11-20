@@ -1,0 +1,276 @@
+* { 
+  box-sizing:border-box;
+}
+
+html, body { 
+  width:100%;
+  height:100%;
+  margin:0;
+}/*In the middle of the screen*/
+
+body { 
+  display:flex; 
+  align-items:center;
+  background-color: gray;
+}
+/*Body of console*/
+
+.gameboy {
+  margin:0 auto;
+  position:relative;
+  height:570px;
+  border-radius:20px;
+  padding:20px;
+  background-color:#4f50db;
+  box-shadow:0px -5px 0px #0d0e51, 0px 5px 0px #3d38b5;
+  font-family:sans-serif;
+}
+
+/*Principal screen*/
+.screen-area {
+  position:relative;
+  padding:35px 50px 5px 50px;
+  border-radius:15px 15px 15px 15px;
+  background-color:#23252d;
+  color:#67879a;
+}
+
+.power {
+  position:absolute;
+  width:50px;
+  left:0px;
+  top:80px;
+  font-size:10px;
+  text-align:center;
+}
+
+.led {
+  position:relative;
+  display:inline-block;
+  background-color:#000000;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  z-index:5;
+}
+
+.power:hover .led{
+  background-color:#ca1a21;
+  box-shadow:0px 0px 10px #ff552e;
+}
+
+.display {
+  background-color:#929d97;
+  height:190px;
+  width:210px;
+  margin-bottom:15px;
+}
+
+.title {
+  margin-left: 15px;
+  display:inline;
+  font-weight:bold;
+  font-style:italic;
+  text-align:center;
+  font-size:20px;
+}
+
+.subtitle {
+  display:inline;
+  font-family:"Comic Sans MS";
+  font-weight:bold;
+  letter-spacing:-1px;
+  text-align:center;
+  font-size:20px;
+}
+
+/*Logo nintendo*/
+.nintendo {
+  width:100px;
+  color:#3436bf;
+  font-weight:bold;
+  text-align:center;
+  margin:0 auto;
+  border:2px solid #3436bf;
+  border-radius:11px;
+  margin-top:30px;
+  text-shadow:0px -2px 1px #6b67ed;
+  box-shadow:0px -2px 1px #6b67ed;
+}
+/*Controls gameboy*/
+.controls {
+  display:flex;
+  justify-content:space-between;
+}
+
+.dpad {
+  position:relative;
+  width:90px;
+  z-index:5;
+}
+
+.up,.right,.down,.left,.middle{
+  width:33%;
+  height:33%;
+  position:absolute;
+  background-color:#565e6a;
+  cursor:pointer;
+}
+
+.up {
+  top:calc(0% + 4px);
+  left:33%;
+  border-top:4px solid black;
+  border-left:4px solid black;
+  border-right:4px solid black;
+  border-radius:5px 5px 0px 0px;
+  
+  &:active {
+    background:linear-gradient(to top, #565e6a 0%, #333 100%);
+  }
+}
+
+.right {
+  top:33%;
+  left:calc(66% - 4px);
+  border-top:4px solid black;
+  border-bottom:4px solid black;
+  border-right:4px solid black;
+  border-radius:0px 5px 5px 0px;  
+  &:active {
+    background:linear-gradient(to right, #565e6a 0%, #333 100%);
+  }
+}
+
+.down {
+  top:calc(66% - 4px);
+  left:33%;
+  border-left:4px solid black;
+  border-bottom:4px solid black;
+  border-right:4px solid black;
+  border-radius:0px 0px 5px 5px;  
+  &:active {
+    background:linear-gradient(to bottom, #565e6a 0%, #333 100%);
+  }
+}
+
+.left {
+  top:33%;
+  left:calc(0% + 4px);
+  border-top:4px solid black;
+  border-bottom:4px solid black;
+  border-left:4px solid black;
+  border-radius:5px 0px 0px 5px;
+
+  &:active {
+    background:linear-gradient(to left, #565e6a 0%, #333 100%);
+  }
+}
+
+.middle {
+  top:33%;
+  left:33%;
+  z-index:-5;
+}
+
+.a-b {
+  position:relative;
+  width:120px;
+  height:90px;
+}
+
+.a {
+  top:15px;
+  right:10px;
+}
+
+.b {
+  top:35px;
+  left:0%;
+}
+
+.a, .b {
+  position:absolute;
+  font-size:22px;
+  width:40px;
+  line-height: 40px;
+  border-radius:50%;
+  background-color:#2c313e;
+  box-shadow:-1px 1px 5px black, 0px 0px 5px black inset;
+  text-shadow:0px -1px 1px #888;
+  color:#2c313e;
+  text-align:center;
+  cursor:pointer; /*Cursor for click*/
+  
+  &:active {
+    box-shadow:-1px 1px 1px black, 0px 0px 5px black inset;
+    border-width:0px;
+    line-height:42px;
+  }
+}
+
+/*Down of console*/
+.start-select {
+  display:flex;
+  justify-content:center;
+}
+
+.select-button,.start-button{
+  content:'';
+  display:block;
+  margin:0 auto;
+  width:30px;
+  height:10px;
+  margin-bottom:5px;
+  border-radius:40%;
+  background:linear-gradient(to bottom, #0b0a1c 0%, #0b0a1c 30%, #62636c 70%, #62636c 100%);
+  border:2px solid #0b0a1c;
+  box-shadow:0px -2px 1px #8482e9;
+  cursor:pointer;
+
+  &:active {
+    background:black;
+  }
+}
+
+.select, .start {
+  color:#6b67ed;
+  letter-spacing:-1px;
+  width:60px;
+  text-align:center;
+  margin-top:60px;
+  
+  
+}
+
+/*Speaker*/
+.speaker {
+  position:absolute;
+  display:flex;
+  width:75px;
+  right:10px;
+  bottom:10px;
+  flex-wrap:wrap;
+  transform:skewY(-10deg);/*Diagonal transform*/
+}
+
+.dot {
+  width:7px;
+  height:7px;
+  margin:1px;
+  border-radius:50%;
+}
+
+.dot.placeholder {
+  background-color:transparent;
+}
+
+.dot.open {
+  background-color:#0a0717;
+  box-shadow:0px 0px 2px #7c7be0 inset;
+}
+
+.dot.closed {
+  background:linear-gradient(to bottom, #6664e5 0%, #2d3590 100%);
+  box-shadow:0px 0px 2px #7c7be0 inset;
+}
